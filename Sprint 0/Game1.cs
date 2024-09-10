@@ -15,7 +15,6 @@ namespace Sprint_0
         private SpriteBatch spriteBatch;
         private ISprite currentSprite;
         private ISprite fontSprite;
-        private SpriteFont font;
         private KeyboardControl keyControl;
         private MouseControl mouseControl;
 
@@ -37,9 +36,8 @@ namespace Sprint_0
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = Content.Load<SpriteFont>("Credit");
             Texture2D texture = Content.Load<Texture2D>("kirby 2");
-            fontSprite = new TextSprite(font);
+            fontSprite = new TextSprite(Content.Load<SpriteFont>("Credit"));
             currentSprite = new Sprite1(texture, 1, 2);
             mouseControl.getTexture(texture);
 
